@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class QuarterRotation {
     public static void main(String[] args) {
+        final long startTime = System.currentTimeMillis();
         Scanner s = new Scanner(System.in);
 
         System.out.print("Enter size of side: ");
@@ -11,10 +12,10 @@ public class QuarterRotation {
 
         int[][] table = new int[side][side];
 
+        int count=0;
         for (int i = 0; i < side; i++) {
             for (int j = 0; j < side; j++) {
-                System.out.printf("Enter value %d,%d : ", i, j);
-                table[i][j] = s.nextInt();
+                table[i][j] = count++;
             }
         }
 
@@ -42,6 +43,7 @@ public class QuarterRotation {
         }
 
         System.out.println("---------------------");
-
+        final long endTime = System.currentTimeMillis();
+        System.out.println("Total execution time: " + (endTime - startTime) + "ms");
     }
 }
